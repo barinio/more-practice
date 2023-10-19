@@ -1,8 +1,9 @@
-import SearchForm from 'components/SearchForm/SearchForm';
-import SearchList from 'components/SearchList/SearchList';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { getMovieByName } from 'services/api';
+
+import SearchForm from 'components/SearchForm/SearchForm';
+import SearchList from 'components/SearchList/SearchList';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,8 +14,8 @@ const Movies = () => {
 
   useEffect(() => {
     const searchMovies = async () => {
+      if (!query) return;
       try {
-        if (!query) return;
         const resp = await getMovieByName(query);
         setSearchResult(resp);
       } catch (error) {
