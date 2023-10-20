@@ -11,9 +11,7 @@ export const Header = () => {
                 <NavLinkStyled to="/">Home</NavLinkStyled>
               </li>
               <li>
-                <NavLinkStyled aria-current="page" to="/movies">
-                  Movies
-                </NavLinkStyled>
+                <NavLinkStyled to="movies">Movies</NavLinkStyled>
               </li>
             </NavList>
           </nav>
